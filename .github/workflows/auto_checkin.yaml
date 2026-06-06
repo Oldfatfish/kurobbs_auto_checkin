@@ -6,6 +6,10 @@ on:
     - cron: '0 22 * * *'  # UTC 时间 22:00 对应北京时间 6:00
   workflow_dispatch:  # 允许手动触发
 
+# 👇 这一行强制启用 Node.js 24，消除所有弃用警告（官方推荐）
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   auto-sign:
     runs-on: ubuntu-latest  # 使用最新的 Ubuntu 环境
